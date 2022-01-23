@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Angular JS </h1>
+					
+				</section>
+				<section>
+					<h2>What is it? </h2>
+					<ul>
+						<li>An open source JavaScript framework. Designed for developing single page applications.</li>
+						<li>Its goal is to extend MVC-based browser applications and make testing and development easier.</li>
+						<li>The framework works with HTML, which contains additional custom attributes that are described by directives, and binds the input or output of a page region to a model, which is regular JavaScript variables. </li>
+						<li>The values ​​of these variables are set manually or retrieved from static or dynamic JSON data.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>When created </h2>
+					<ul>
+						<li>AngularJS was developed in 2009 by Mishko Hevery and Adam Abrons at Brat Tech LLC as the software behind the megabyte JSON storage service to facilitate enterprise application development.</li>
+						
+						<li>Google continues to develop and maintain the library with fellow Google employees Igor Minar and Vojta Jin. </li>
+						
+					</ul>
+				</section>
+				<section>
+					<h2>Philosophy </h2>
+					<ul>
+						<li>AngularJS is designed with the belief that declarative programming is best for building user interfaces and describing software components, while imperative programming is great for describing business logic.</li>
+						
+						<li>The framework adapts and extends traditional HTML to provide two-way data binding for dynamic content, which automatically synchronizes the model and view. As a result, AngularJS reduces the role of DOM manipulation and improves testability.</li>
+						
+					</ul>
+				</section>
+				<section>
+					<h2>Objectives </h2>
+					<ul>
+						<li>Separating DOM manipulation from application logic, which improves code testability.</li>
+						<li>Treating testing as an important part of development. The complexity of testing directly depends on the structuredness of the code.</li>
+						<li>Separation of the client and server side, which allows development in parallel.</li>
+						<li>Guiding the developer through the entire path of creating an application: from designing the user interface, through writing business logic, to testing.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Chip </h2>
+					<ul>
+						<li>Angular adheres to the MVC design pattern and encourages loose coupling between presentation, data, and component logic. Using dependency injection, Angular brings classic server-side services such as view-dependent controllers to the client side. Hence, the load on the server decreases and the web application becomes lighter.</li>
+						<li>Working with directives: Using AngularJS directives, you can create custom HTML tags and attributes to add behavior to some elements</li>
+					</ul>
+				</section>
+				<section>
+					<h2>What is a directive</h2>
+					<ul>
+						<li>Directives are a key feature of AngularJS.</li>
+						<li>Using directives, you can add new behavior to existing HTML elements, you can create new components. Examples of directives that add new behavior to existing HTML elements are input, select, textarea in conjunction with ngModel, required, etc.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>A simple directive</h2>
+					<ul>
+						<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						angular.module('moduleName', [])
+							.directive('directiveName', function() {
+								return function(scope, element, attrs) {
+
+								}
+							});
+						</code></pre>
+						<li>This function takes the following parameters:</li>
+						<li>scope - the scope in which the directive is invoked</li>
+						<li>element - the DOM element that the directive belongs to, wrapped in jQuery Lite</li>
+						<li>attrs - an object with a list of all the attributes of the tag in which the directive is called</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Popular directives</h2>
+					<ul>
+						<li>ng-app 
+							Declares the element as root for the application.</li>
+						<li>ng-bind 
+							Automatically replaces the text of the HTML element with the value of the passed expression.</li>
+							<li>ng-model 
+								Same as ng-bind, except that it provides two-way data binding. The content of the element will change, the angular will also change the value of the model. The value of the model will change, the angular will change the text inside the element.</li>
+							<li>ng-class 
+								Defines classes for dynamic loading.</li>
+							
+					</ul>
+				</section>
+				<section>
+					<h2>Popular directives</h2>
+					<ul>
+							<li>ng-controller 
+								Defines a JavaScript controller for evaluating HTML expressions according to MVC.</li>
+							<li>ng-repeat 
+								Creates a DOM instance for each element in the collection.</li>
+								<li>ng-show and ng-hide 
+									Shows or hides the element based on the value of the boolean expression.</li>
+								<li>ng-switch 
+									Creates a template instance from many options, depending on the value of the expression.</li>
+								<li>ng-view 
+									Base directive, responsible for handling routes that accept JSON before rendering templates managed by the specified controllers.</li>
+								
+							</ul>
+						</section>
+						<section>
+					<h2>Basic concepts of Angular</h2>
+					<ul>
+						<li>AngularJS is a fairly structured library. Almost every piece of functionality is highlighted in its own module: $ http, $ resource, $ route, $ location, and so on. In fact, the library itself is concentrated in the Core module. You don't need to include it (like many other modules like $ http), since it is included in the core of the library. Calling angular.module can work differently depending on the parameters passed to it. If the module name passed by the first parameter corresponds to an already existing module, then the call will return a link to this module, if there is no such module, then it will be previously created.
+							
+						</li>
+						<li></li>
+					</ul>
+				</section>
+						<section>
+					<h2>Module configuration</h2>
+					<ul>
+						<li>Each module behaves like a full-fledged element of the application and can itself be an application (as discussed earlier). Of course, modules can be customized by changing their behavior depending on the situation. There are two functions for this:
+							
+						</li>
+						<ul>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					myModule.run(function () {
+
+					})
+					myModule.config(function () {
+
+					})
+							</code></pre>
+					</ul>
+				</section>
+						<section>
+					<h2>Providers</h2>
+					<ul>
+						<li>Providers are class factories. They create ready-made objects that can be embedded using DI. Providers are the main way to extend AngularJS functionality. At its core, a provider is an object that contains a single mandatory function with a highly regulated name: $ get.
+						</li>
+							<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					function someProvider() {
+						this.$get = function( ) {
+							return 42
+						}
+					}
+							</code></pre>
+					</ul>
+				</section>
+						<section>
+					<h2>Providers</h2>
+					<ul>
+						<li>In addition, the provider can include any methods with which you can customize the creation of objects. The objects created by the provider are usually called services. 
+							The $ get function is called by the injector during dependency injection. Therefore, if you write it in one way or another, then you can get different results: for example, each time a new object will be created, or maybe a link to the same general one will be given. The second option is widely used to exchange data between different parts of the application / module. 
+							
+						</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
